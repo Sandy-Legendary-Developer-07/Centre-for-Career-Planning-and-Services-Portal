@@ -17,6 +17,7 @@ import { useAppContext } from '../../context/AppContext.jsx';
                 headers: {
                     "Content-Type": "application/json"
                 },
+                credentials: "include",
                 body: JSON.stringify({email, password})
             
             })
@@ -29,7 +30,6 @@ import { useAppContext } from '../../context/AppContext.jsx';
                 throw new Error(data.message)
             }
             localStorage.setItem("ccps-user", JSON.stringify(data.userData))
-            localStorage.setItem("ccps-token", data.token)
             setAuthUser(data)
             toast.success("Login Successful!");
         }

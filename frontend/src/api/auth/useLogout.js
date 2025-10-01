@@ -24,7 +24,7 @@ const useLogout = () => {
       }
 
       localStorage.removeItem('ccps-user');
-      localStorage.removeItem('ccps-token');
+      
       setAuthUser(null);
       toast.success('Logged out successfully!');
       navigate('/login');
